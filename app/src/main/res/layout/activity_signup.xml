@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/login_background"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_for_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_ecommerce_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_fname"
+        android:layout_width="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/rounded_corner_blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_for_background">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/image_user_name"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_fname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layout_fname"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_fname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="First Name"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:textCursorDrawable="@color/purple_200"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_constraintStart_toEndOf="@id/image_user"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/clear_fname"
+            android:layout_width="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_clear_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_lname"
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/rounded_corner_blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_fname">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_user_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/image_user_name"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_lname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layout_lname"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_lname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Last Name"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:textCursorDrawable="@color/purple_200"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/clear_lname"
+            app:layout_constraintStart_toEndOf="@id/image_user_second"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/clear_lname"
+            android:layout_width="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_clear_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_email"
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/rounded_corner_blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_lname">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@null"
+            android:hint="Email"
+            android:inputType="textWebEmailAddress"
+            android:textAllCaps="false"
+            android:textCursorDrawable="@color/purple_200"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/clear_email"
+            app:layout_constraintStart_toEndOf="@+id/image_mail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/image_mail_logo"
+            app:layout_constraintBottom_toBottomOf="@+id/text_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_email" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/clear_email"
+            android:layout_width="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_clear_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corner_blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_email">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@null"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textAllCaps="false"
+            android:textCursorDrawable="@color/purple_200"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/clear_password"
+            app:layout_constraintStart_toEndOf="@+id/image_password"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/image_keystore"
+            app:layout_constraintBottom_toBottomOf="@+id/text_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_password" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/clear_password"
+            android:layout_width="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_clear_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/layout_sign_up"
+        android:layout_width="0dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/rounded_corner_blue_border"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_password" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_for_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+</androidx.constraintlayout.widget.ConstraintLayout>
