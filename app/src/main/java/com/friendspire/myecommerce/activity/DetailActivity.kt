@@ -104,7 +104,7 @@ class DetailActivity : AppCompatActivity() {
                 if (quantity > 0) {
                     quantity--
                     Utils.product?.let { list ->
-                        
+
                         if (list.isNotEmpty()) {
                             for (i in 0 until list.size) {
                                 if (this@DetailActivity.id == list[i].id) {
