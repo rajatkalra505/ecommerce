@@ -1,16 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="setting"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="@+id/cardView">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/img_acc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Account"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="10dp"
+                android:checked="true"
+                android:drawableEnd="@drawable/img_arraow_right"
+                android:text="Account"
+                android:textColor="#3A4455"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_card"
+                app:layout_constraintTop_toTopOf="@+id/img_card" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_card" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/img_notifications"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/materialDivider" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_cash"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="10dp"
+                android:drawableEnd="@drawable/img_arraow_right"
+                android:text="Notification"
+                android:textColor="#3A4455"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_cash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_cash"
+                app:layout_constraintTop_toTopOf="@+id/img_cash" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_cash" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/img_appearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/materialDivider2" />
+
+
+            <!-- <com.google.android.material.radiobutton.MaterialRadioButton-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_qr"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="10dp"
+                android:drawableEnd="@drawable/img_arraow_right"
+                android:text="Appearance"
+                android:textColor="#3A4455"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_qr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_qr"
+                app:layout_constraintTop_toTopOf="@+id/img_qr" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider3"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_qr" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/img_privacy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/materialDivider3" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_wallet"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="10dp"
+                android:drawableEnd="@drawable/img_arraow_right"
+                android:text="Privacy and security"
+                android:textColor="#3A4455"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wallet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_wallet"
+                app:layout_constraintTop_toTopOf="@+id/img_wallet" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider4"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_wallet" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/img_support"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/materialDivider4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_help"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="10dp"
+                android:drawableEnd="@drawable/img_arraow_right"
+                android:text="Help and Support"
+                android:textColor="#3A4455"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_help"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_help"
+                app:layout_constraintTop_toTopOf="@+id/img_help" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider5"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_help" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/img_about"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/materialDivider5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_about"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="10dp"
+                android:drawableEnd="@drawable/img_arraow_right"
+                android:text="About"
+                android:textColor="#3A4455"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_about"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_about"
+                app:layout_constraintTop_toTopOf="@+id/img_about" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider6"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_about" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version: 1.0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:elevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

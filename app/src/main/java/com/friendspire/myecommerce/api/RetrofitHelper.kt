@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
-    private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+     const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
     fun getInstance(): Retrofit {
         return Retrofit.Builder()
@@ -13,6 +13,6 @@ object RetrofitHelper {
             .build()
     }
 
-    val retrofitHelper = getInstance().create(WebService::class.java)
+    val retrofitHelper: WebService? = getInstance().create(WebService::class.java)
 
 }

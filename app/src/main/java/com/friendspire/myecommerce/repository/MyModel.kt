@@ -1,16 +1,25 @@
 package com.friendspire.myecommerce.repository
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.friendspire.myecommerce.api.RetrofitHelper
-import com.friendspire.myecommerce.api.WebService
 import com.friendspire.myecommerce.data.MyDataResponse
 
-class MyModel :ViewModel() {
-    private val  dummyLiveData= MutableLiveData<MyDataResponse>()
+class MyModel : ViewModel() {
+    val dummyLiveData = MutableLiveData<List<MyDataResponse>>()
+    var apiError = MutableLiveData<String>()
+    var onFailure = MutableLiveData<Throwable>()
+     fun getMydata() {
+        MyRepository.getData({
+            dummyLiveData.postValue(it)
 
-    suspend fun getMydata() {
-       MyRepository.getData()
-     }
+        },
+            {
+                apiError.value = it
+            },
+            {
+                onFailure.value = it
+            })
+    }
 
 }

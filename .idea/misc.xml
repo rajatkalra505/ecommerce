@@ -3,15 +3,51 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/background_add_detele_item.xml" value="0.203" />
+        <entry key="app/src/main/res/drawable/background_page.xml" value="0.1775" />
+        <entry key="app/src/main/res/drawable/btn_selected.xml" value="0.1155" />
+        <entry key="app/src/main/res/drawable/btn_selector.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/btn_unselected.xml" value="0.1155" />
+        <entry key="app/src/main/res/drawable/image_arrow_up.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/image_back.xml" value="0.204" />
+        <entry key="app/src/main/res/drawable/image_delete_item.xml" value="0.1775" />
+        <entry key="app/src/main/res/drawable/image_filter.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/image_share.xml" value="0.1815" />
+        <entry key="app/src/main/res/drawable/img_qr.xml" value="0.1815" />
+        <entry key="app/src/main/res/drawable/img_ques.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/img_wallet.xml" value="0.1815" />
+        <entry key="app/src/main/res/drawable/navigation_view_colored.xml" value="0.203" />
+        <entry key="app/src/main/res/drawable/profile_back.xml" value="0.201" />
         <entry key="app/src/main/res/drawable/rounded_corner_blue_border.xml" value="0.203" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="app/src/main/res/font/my_font.xml" value="0.33053435114503815" />
+        <entry key="app/src/main/res/layout-v26/activity_detail.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_adress.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_help.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.29453125" />
+        <entry key="app/src/main/res/layout/activity_notification.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_ordered_placed.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_payment_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.4393939393939394" />
+        <entry key="app/src/main/res/layout/data_placeholder_layout.xml" value="0.15263157894736842" />
+        <entry key="app/src/main/res/layout/fragment_beauty.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.3307017543859649" />
+        <entry key="app/src/main/res/layout/fragment_furniture.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38415841584158417" />
+        <entry key="app/src/main/res/layout/fragment_mobile.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_offer.xml" value="0.29453125" />
-        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.29453125" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_adapter_notification.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_cart_layout.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/my_item.xml" value="0.29296875" />
+        <entry key="app/src/main/res/layout/payment_activity.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/view_pager_item.xml" value="0.16032492518170158" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.29296875" />
+        <entry key="app/src/main/res/menu/filter_menu.xml" value="0.29296875" />
+        <entry key="app/src/main/res/menu/menu_item.xml" value="0.33" />
         <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.29296875" />
       </map>
     </option>

@@ -3,6 +3,9 @@ package com.friendspire.myecommerce.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
 import com.friendspire.myecommerce.databinding.ActivityLoginBinding
 import com.friendspire.myecommerce.utils.Utils
@@ -24,6 +27,30 @@ class LoginActivity : AppCompatActivity() {
     private fun setClickListeners() {
         binding.clearEmail.setOnClickListener { binding.textEmail.text?.clear() }
         binding.clearPassword.setOnClickListener { binding.textPassword.text?.clear() }
+        binding.textEmail.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if (p0?.isEmpty() == true) {
+                    binding.clearEmail.visibility = View.GONE
+                } else {
+                    binding.clearEmail.visibility = View.VISIBLE
+
+                }
+            }
+        })
+        binding.textPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                if (p0?.isEmpty() == true) {
+                    binding.clearPassword.visibility = View.GONE
+                } else {
+                    binding.clearPassword.visibility = View.VISIBLE
+
+                }
+            }
+        })
         binding.buttonLogin.setOnClickListener {
             launchLobby()
         }
