@@ -34,7 +34,7 @@ class DetailActivity : AppCompatActivity() {
     private val ioScope = CoroutineScope(Dispatchers.IO + Job())
     private val uiScope = CoroutineScope(Dispatchers.Main + Job())
     private var images: List<Int>? = null
-
+    private var dataItem: MyDataResponse? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
@@ -64,34 +64,35 @@ class DetailActivity : AppCompatActivity() {
         binding.imgAddItem.setOnClickListener {
             ioScope.launch {
                 quantity++
-                val dataItem = MyDataResponse().apply {
-                    id = this@DetailActivity.id
-                    price = this@DetailActivity.price
-                    title = this@DetailActivity.title
-                    url = this@DetailActivity.image
-                    countSelected = quantity
-                }
-                Utils.product?.let { list ->
-                    if (list.isNotEmpty()) {
-                        var index = -1
-                        for (i in 0 until list.size) {
-                            if (this@DetailActivity.id != list[i].id) {
-                                index = i
-                            } else {
-                                list[i].countSelected = list[i].countSelected?.plus(1)
-                                index = -1
-                                break
-                            }
-                        }
-                        if (index > -1) {
-                            list.add(dataItem)
-                        } else {
-                        }
-
-                    } else {
-                        list.add(dataItem)
-                    }
-                }
+                dataItem?.countSelected = quantity
+//                val dataItem = MyDataResponse().apply {
+//                    id = this@DetailActivity.id
+//                    price = this@DetailActivity.price
+//                    title = this@DetailActivity.title
+//                    url = this@DetailActivity.image
+//                    countSelected = quantity
+//                }
+//                Utils.product?.let { list ->
+//                    if (list.isNotEmpty()) {
+//                        var index = -1
+//                        for (i in 0 until list.size) {
+//                            if (this@DetailActivity.id != list[i].id) {
+//                                index = i
+//                            } else {
+//                                list[i].countSelected = list[i].countSelected?.plus(1)
+//                                index = -1
+//                                break
+//                            }
+//                        }
+//                        if (index > -1) {
+//                            list.add(dataItem)
+//                        } else {
+//                        }
+//
+//                    } else {
+//                        list.add(dataItem)
+//                    }
+//                }
                 uiScope.launch {
                     binding.price.text = "₹" + ((quantity * price).toString())
                     binding.textQuantity.text = quantity.toString()
@@ -103,24 +104,24 @@ class DetailActivity : AppCompatActivity() {
             ioScope.launch {
                 if (quantity > 0) {
                     quantity--
-                    Utils.product?.let { list ->
-
-                        if (list.isNotEmpty()) {
-                            for (i in 0 until list.size) {
-                                if (this@DetailActivity.id == list[i].id) {
-                                    if (list[i].countSelected == 1) {
-                                        list.removeAt(i)
-                                    } else {
-                                        list[i].countSelected = list[i].countSelected?.minus(1)
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    dataItem?.countSelected = quantity
+//                    Utils.product?.let { list ->
+//
+//                        if (list.isNotEmpty()) {
+//                            for (i in 0 until list.size) {
+//                                if (this@DetailActivity.id == list[i].id) {
+//                                    if (list[i].countSelected == 1) {
+//                                        list.removeAt(i)
+//                                    } else {
+//                                        list[i].countSelected = list[i].countSelected?.minus(1)
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
                     uiScope.launch {
                         binding.price.text = ((quantity * price).toString())
                         binding.textQuantity.text = quantity.toString()
-                        Log.d("121212", "setClickListners: ${Utils.product?.size}")
                     }
 
                 }
@@ -128,6 +129,32 @@ class DetailActivity : AppCompatActivity() {
             }
         }
         binding.buttonAddToCart.setOnClickListener {
+            Utils.product?.let { list ->
+                if (list.isNotEmpty()) {
+                    var index = -1
+                    for (i in 0 until list.size) {
+                        if (this@DetailActivity.id != list[i].id) {
+                            index = i
+                        } else {
+                            list[i].countSelected = binding.textQuantity.text.toString().toInt()
+                            index = -1
+                            break
+                        }
+                    }
+                    if (index > -1) {
+                        dataItem?.countSelected=binding.textQuantity.text.toString().toInt()
+                        if (binding.textQuantity.text.toString().toInt()>0)
+                        dataItem?.let { it1 -> list.add(it1) }
+                        else{}
+                    } else {
+                    }
+
+                } else {
+                    if (binding.textQuantity.text.toString().toInt()>0)
+                        dataItem?.let { it1 -> list.add(it1) }
+                    else{}                }
+            }
+            Log.d("121212", " ${Utils.product?.size}   ${Utils.product}")
             val intent = Intent(this, CartActivity::class.java)
             getResult.launch(intent)
         }
@@ -154,6 +181,15 @@ class DetailActivity : AppCompatActivity() {
 //        binding.textQuantity.text = quantity.toString()
         // binding.price.text = "0"
         setList()
+
+
+        dataItem = MyDataResponse().apply {
+            id = this@DetailActivity.id
+            price = this@DetailActivity.price
+            title = this@DetailActivity.title
+            url = this@DetailActivity.image
+            countSelected = quantity
+        }
 
     }
 
@@ -197,6 +233,7 @@ class DetailActivity : AppCompatActivity() {
             R.drawable.ecommerceimage,
             R.drawable.background_detail,
             R.drawable.ecommerceimage,
+            R.drawable.background_detail,
         )
         val adapter =
             images?.let { images ->
@@ -237,8 +274,14 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private val onClick: (Int) -> Unit = { position ->
+        val bundle = Bundle().apply {
+            putInt(Utils.IMAGE_POSITION, position)
+        }
+        val fragment = FullScreenSlider(images)
+        fragment.arguments = bundle
+
         supportFragmentManager.beginTransaction().apply {
-            add(binding.fragmentContainer.id, FullScreenSlider(position, images))
+            add(binding.fragmentContainer.id, fragment)
             addToBackStack(null)
             commit()
         }

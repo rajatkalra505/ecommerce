@@ -13,6 +13,7 @@ object Utils {
     const val ITEM_URL = "ITEM_URL"
     const val ITEM_PRICE = "ITEM_PRICE"
     const val RESULT_CODE_LIST_UPDATE = 110
+    const val IMAGE_POSITION = "IMAGE_POSITION"
 
     fun getCurrentYear(): Int {
         return Calendar.getInstance().get(Calendar.YEAR)

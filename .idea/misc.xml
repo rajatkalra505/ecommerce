@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/image_back.xml" value="0.204" />
         <entry key="app/src/main/res/drawable/image_delete_item.xml" value="0.1775" />
         <entry key="app/src/main/res/drawable/image_filter.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/image_offer.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/image_share.xml" value="0.1815" />
         <entry key="app/src/main/res/drawable/img_qr.xml" value="0.1815" />
         <entry key="app/src/main/res/drawable/img_ques.xml" value="0.16" />
@@ -38,7 +39,7 @@
         <entry key="app/src/main/res/layout/fragment_furniture.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38415841584158417" />
         <entry key="app/src/main/res/layout/fragment_mobile.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_offer.xml" value="0.29453125" />
+        <entry key="app/src/main/res/layout/fragment_offer.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_adapter_notification.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_cart_layout.xml" value="0.5" />

@@ -1,6 +1,7 @@
 package com.friendspire.myecommerce.fragments
 
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -31,21 +32,12 @@ class OfferFragment : Fragment() {
     }
 
     private fun initViews() {
-        val textView = TextView(context)
-        textView.text = "        dynamic text view one"
-        val textView2 = TextView(context)
-        textView2.text = "        dynamic text view two"
-        val params = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
-        textView.layoutParams = params
-        textView2.layoutParams = params
+        binding.timer.apply {
+            isCountDown=true
+            base = SystemClock.elapsedRealtime() + 2000000
+            start()
+        }
 
-        binding.rootLayout.addView(textView)
-        binding.rootLayout.addView(textView2)
-        textView.gravity = Gravity.CENTER
-        textView2.gravity = Gravity.CENTER
     }
 
 }
