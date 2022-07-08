@@ -2,13 +2,18 @@ package com.friendspire.myecommerce
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
@@ -17,14 +22,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.friendspire.myecommerce.activity.DetailActivity
 import com.friendspire.myecommerce.adapters.MyAdapter
 import com.friendspire.myecommerce.data.MyDataResponse
 import com.friendspire.myecommerce.databinding.FragmentFurnitureBinding
 import com.friendspire.myecommerce.repository.MyModel
 import com.friendspire.myecommerce.utils.Utils
+import kotlinx.android.synthetic.main.fragment_furniture.*
 import java.util.*
+
 
 class FurnitureFragment : Fragment() {
 
@@ -46,7 +52,7 @@ class FurnitureFragment : Fragment() {
         mViewModel?.dummyLiveData?.observe(this, Observer {
             it?.let { it1 ->
                 binding.shimmerViewContainer.stopShimmer()
-                binding.shimmerViewContainer.visibility=View.GONE
+                binding.shimmerViewContainer.visibility = View.GONE
                 for (item in it1) {
                     item.price = Utils.getRandomNumber()
                     item.countSelected = 0
@@ -67,16 +73,44 @@ class FurnitureFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mViewModel?.getMydata()
+    hitApi()
         initViews()
         setAdapter()
         setListners()
+        val face: Typeface = Typeface.createFromAsset(context?.assets, "fonts/titania_regular.ttf")
+        val searchText = binding.searchAction.findViewById<View>(androidx.appcompat.R.id.search_src_text) as TextView
+        searchText.typeface = face
+    }
+
+    private fun hitApi() {
+        val internet = context?.let { checkForInternet(it) }
+
+        if (internet == true){
+            mViewModel?.getMydata()
+            binding.retry.visibility=View.GONE
+            binding.shimmerViewContainer.startShimmer()
+            binding.shimmerViewContainer.visibility = View.VISIBLE}
+        else
+        {
+            binding.retry.visibility=View.VISIBLE
+            binding.shimmerViewContainer.stopShimmer()
+            binding.shimmerViewContainer.visibility = View.GONE
+
+        }
+
+
     }
 
     @SuppressLint("RestrictedApi")
     private fun setListners() {
+
+        binding.retry.setOnClickListener {
+        hitApi()
+        }
+
         binding.filterData.setOnClickListener {
             val popupMenu = context?.let { ctx -> PopupMenu(ctx, binding.filterData) }
             popupMenu?.inflate(R.menu.filter_menu)
@@ -178,7 +212,7 @@ class FurnitureFragment : Fragment() {
 
             }
             else -> {
-                binding.recyclerViewDummyData.layoutManager =  GridLayoutManager(activity, 2)
+                binding.recyclerViewDummyData.layoutManager = GridLayoutManager(activity, 2)
 
             }
         }
@@ -212,8 +246,27 @@ class FurnitureFragment : Fragment() {
 
     fun setCount(i: Int) {
         frag_count = i
-        Log.e("121212", "setCount: $frag_count")
+      //  Log.e("121212", "setCount: $frag_count")
         // Toast.makeText(context, "$frag_count", Toast.LENGTH_SHORT).show()
     }
+    private fun checkForInternet(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                else -> false
+            }
+        } else {
+            @Suppress("DEPRECATION") val networkInfo =
+                connectivityManager.activeNetworkInfo ?: return false
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnected
+        }
+    }
+
 
 }

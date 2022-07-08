@@ -16,7 +16,9 @@
         app:tabGravity="fill"
         app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
-        app:tabTextColor="@android:color/background_light" />
+
+        app:tabTextColor="@android:color/background_light"
+        app:tabTextAppearance="@style/tab_text" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/offers"
@@ -51,6 +53,7 @@
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
                 android:background="#00CDEA"
+                android:fontFamily="@font/titania_regular"
                 android:gravity="center"
                 android:text="Limited Offers| 24 Hrs Only"
                 android:textColor="@color/black" />

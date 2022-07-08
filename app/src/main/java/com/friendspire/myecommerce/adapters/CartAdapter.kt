@@ -2,13 +2,13 @@ package com.friendspire.myecommerce.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.friendspire.myecommerce.R
 import com.friendspire.myecommerce.data.MyDataResponse
 import com.friendspire.myecommerce.databinding.ItemCartLayoutBinding
-import com.friendspire.myecommerce.utils.Utils
 
 
 class CartAdapter(
@@ -35,12 +35,16 @@ class CartAdapter(
         RecyclerView.ViewHolder(myItemBinding.root) {
         init {
             myItemBinding.imgAddItem.setOnClickListener {
-                if (bindingAdapterPosition >= 0 && bindingAdapterPosition < (productList?.size ?: 0)) {
+                if (bindingAdapterPosition >= 0 && bindingAdapterPosition < (productList?.size
+                        ?: 0)
+                ) {
                     onProductAddClick(bindingAdapterPosition)
                 }
             }
             myItemBinding.imgDeleteItem.setOnClickListener {
-                if (bindingAdapterPosition >= 0 && bindingAdapterPosition < (productList?.size ?: 0)) {
+                if (bindingAdapterPosition >= 0 && bindingAdapterPosition < (productList?.size
+                        ?: 0)
+                ) {
                     onProductDeleteClick(bindingAdapterPosition)
                 }
             }
@@ -49,13 +53,21 @@ class CartAdapter(
 
         @SuppressLint("SetTextI18n")
         fun bindItems(data: MyDataResponse?) {
-            myItemBinding.textQuantityTemp.text = data?.countSelected.toString()
-            myItemBinding.price.text =
-                "₹" + ((data?.price?.let { data.countSelected?.times(it) }).toString())
-            Glide.with(myItemBinding.myImage)
-                .load(data?.url + ".png")
-                .placeholder(R.drawable.placeholder)
-                .into(myItemBinding.myImage)
+            if (data?.countSelected.toString().toInt() > 0) {
+                myItemBinding.mainCard.visibility=View.VISIBLE
+                myItemBinding.textQuantityTemp.text = data?.countSelected.toString()
+                myItemBinding.price.text =
+                    "₹" + ((data?.price?.let { data.countSelected?.times(it) }).toString())
+                Glide.with(myItemBinding.myImage)
+                    .load(data?.url + ".png")
+                    .placeholder(R.drawable.placeholder)
+                    .into(myItemBinding.myImage)
+            }
+            else
+            {
+                myItemBinding.mainCard.visibility=View.GONE
+            }
         }
+
     }
 }

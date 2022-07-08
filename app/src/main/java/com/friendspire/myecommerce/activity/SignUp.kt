@@ -1,6 +1,8 @@
 package com.friendspire.myecommerce.activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -83,7 +85,11 @@ class SignUp : AppCompatActivity() {
 
         binding.textTermsAndCondition.setOnClickListener {
             binding.webView.visibility = View.VISIBLE
+            binding.myToolbar.visibility = View.VISIBLE
             binding.webView.loadUrl("https://www.termsfeed.com/live/b506f00c-22ca-4910-b820-e9d8eacec9ac")
+        }
+        binding.backButton.setOnClickListener {
+            onBackPressed()
         }
     }
 
@@ -92,6 +98,7 @@ class SignUp : AppCompatActivity() {
             binding.webView.goBack()
         } else if (binding.webView.visibility == View.VISIBLE) {
             binding.webView.visibility = View.GONE
+            binding.myToolbar.visibility = View.GONE
         } else {
             super.onBackPressed()
         }
@@ -99,12 +106,24 @@ class SignUp : AppCompatActivity() {
 
     private fun launchLobby() {
         if (!validate()) {
+            savetoPrefrencs()
             val intent = Intent(this, LobbyActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         } else {
             Toast.makeText(this, "Please Enter all fields correctly", Toast.LENGTH_SHORT).show()
 
         }
+    }
+
+    private fun savetoPrefrencs() {
+        val sharedPreferences = getSharedPreferences("My_pref", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString("fnamekey", binding.textFname.text.toString())
+        editor.putString("lnamekey", binding.textLname.text.toString())
+        editor.putString("emailkey", binding.textEmail.text.toString())
+        editor.apply()
+        editor.commit()
     }
 
     private fun validate(): Boolean {

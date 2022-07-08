@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.friendspire.myecommerce.R
 import com.friendspire.myecommerce.databinding.ActivityOrderedPlacedBinding
+import com.friendspire.myecommerce.utils.Utils
 import kotlinx.coroutines.*
 
 class OrderedPlacedActivity : AppCompatActivity() {
@@ -17,13 +18,14 @@ class OrderedPlacedActivity : AppCompatActivity() {
         binding = ActivityOrderedPlacedBinding.inflate(layoutInflater)
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
-        Glide.with(this)
-            .load("https://freepngimg.com/thumb/emoji/65057-emoticon-signal-smiley-thumb-emoji-free-frame.png")
-            .thumbnail(
-                Glide.with(this).load(
-                    R.drawable.placeholder
-                )
-            ).into(binding.ok)
+        binding.ok.setImageResource(R.drawable.smile)
+//        Glide.with(this)
+//            .load("https://freepngimg.com/thumb/emoji/65057-emoticon-signal-smiley-thumb-emoji-free-frame.png")
+//            .thumbnail(
+//                Glide.with(this).load(
+//                    R.drawable.placeholder
+//                )
+//            ).into(binding.ok)
 
         /*Handler().postDelayed({
             val intent = Intent(this, LobbyActivity::class.java)
@@ -34,6 +36,7 @@ class OrderedPlacedActivity : AppCompatActivity() {
         uiScope.launch {
             delay(3000)
             finishAffinity()
+            Utils.product?.clear()
             val intent = Intent(this@OrderedPlacedActivity, LobbyActivity::class.java)
             startActivity(intent)
         }

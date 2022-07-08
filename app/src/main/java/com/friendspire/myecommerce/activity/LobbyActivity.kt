@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -20,8 +22,13 @@ import com.friendspire.myecommerce.fragments.SettingFragment
 class LobbyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+        supportActionBar?.setCustomView(R.layout.custom_action_bar)
+
         val homeFragment = HomeFragment()
         val offerFragment = OfferFragment()
         val settingFragment = SettingFragment()
@@ -34,6 +41,7 @@ class LobbyActivity : AppCompatActivity() {
                 R.string.nav_open,
                 R.string.nav_close
             )
+
         binding.navigationDrawer.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
@@ -46,6 +54,7 @@ class LobbyActivity : AppCompatActivity() {
                 }
                 R.id.nav_settings -> {
                     setCurrentFragmentForSetting(SettingFragment())
+
                     binding.navigationDrawer.closeDrawers()
                 }
                 R.id.nav_logout -> {
@@ -72,6 +81,16 @@ class LobbyActivity : AppCompatActivity() {
                 else -> false
             }
         }
+        setNavHeader()
+    }
+
+    private fun setNavHeader() {
+//        supportActionBar?.title.
+//        val navigationView = binding.navigationDrawer
+//        val headerView = navigationView.getChildAt(0)
+//        if (headerView is TextView) {
+//            headerView.text = "My App"
+//        }
     }
 
     private fun setCurrentFragmentForSetting(fragment: Fragment) {
@@ -118,7 +137,15 @@ class LobbyActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
+        val f = supportFragmentManager.findFragmentById(R.id.fragment_container)
+        Toast.makeText(this, "$f", Toast.LENGTH_SHORT).show()
 
+        if (f is SettingFragment)
+        {
+            Toast.makeText(this, "SETING", Toast.LENGTH_SHORT).show()
+        }
+
+        //  finishAffinity()
         Log.i("mainActvitylobbby", "yesssssssssss")
     }
 

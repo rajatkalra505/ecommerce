@@ -47,6 +47,7 @@ class AdressActivity : AppCompatActivity() {
                 && !binding.zipCode.text.isNullOrEmpty()
                 && !binding.townCity.text.isNullOrEmpty()
                 && !binding.state.text.isNullOrEmpty()
+                && binding.zipCode.text.toString().trim().length == 6
 
 
     }

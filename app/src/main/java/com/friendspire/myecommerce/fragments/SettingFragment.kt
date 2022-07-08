@@ -17,6 +17,7 @@ import com.friendspire.myecommerce.activity.HelpActivity
 import com.friendspire.myecommerce.activity.LobbyActivity
 import com.friendspire.myecommerce.activity.NotificationActivity
 import com.friendspire.myecommerce.databinding.FragmentSettingBinding
+import kotlinx.android.synthetic.main.custom_action_bar.*
 
 class SettingFragment : Fragment() {
     private lateinit var binding: FragmentSettingBinding
@@ -44,7 +45,7 @@ class SettingFragment : Fragment() {
                     }
                 }
 
-                Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show()
+              //  Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -54,6 +55,7 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setListners()
+
     }
 
 

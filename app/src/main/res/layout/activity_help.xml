@@ -39,12 +39,13 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/image_back" />
 
-            <com.friendspire.myecommerce.utils.views.CustomView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/title_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/titania_regular"
                 android:text="Help"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -55,45 +56,55 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:elevation="4dp"
-        android:translationZ="4dp"
-        app:cardCornerRadius="10dp"
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:padding="10dp"
-            android:id="@+id/label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/titania_regular"
-            android:text="Please Read For Help"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card">
-
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/titania_regular"
-            android:justificationMode="inter_word"
-            android:text="@string/dummy_text"
-            android:textSize="17sp" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:elevation="4dp"
+                android:translationZ="4dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scroll">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titania_regular"
+                    android:padding="10dp"
+                    android:text="Please Read For Help"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/titania_regular"
+                android:justificationMode="inter_word"
+                android:text="@string/dummy_text"
+                android:textSize="17sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

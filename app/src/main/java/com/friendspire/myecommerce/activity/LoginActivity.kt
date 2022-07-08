@@ -1,15 +1,14 @@
 package com.friendspire.myecommerce.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.friendspire.myecommerce.databinding.ActivityLoginBinding
 import com.friendspire.myecommerce.utils.Utils
-import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -21,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
         init()
         setClickListeners()
     }
+
     private fun init() {
     }
 
@@ -62,16 +62,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun launchLobby() {
-        if (validate())
-        {
+        if (validate()) {
             val intent = Intent(this, LobbyActivity::class.java)
             startActivity(intent)
-        }
-        else
-        {
+        } else {
             Toast.makeText(this, "Entered Email or Password is wrong", Toast.LENGTH_SHORT).show()
 
-        }    }
+        }
+    }
 
     private fun validate(): Boolean {
         return !binding.textEmail.text.isNullOrEmpty()

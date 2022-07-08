@@ -23,6 +23,9 @@ class HelpActivity : AppCompatActivity() {
             binding.label.text="Please Read About"
 
         }
+        binding.imgBack.setOnClickListener {
+            onBackPressed()
+        }
 
     }
 }

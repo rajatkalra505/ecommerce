@@ -8,22 +8,24 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:gravity="center_vertical"
-            app:layout_constraintTop_toTopOf="@+id/cardView">
+
+            >
 
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -40,16 +42,19 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_tittle"
                 android:layout_width="0dp"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:lineSpacingExtra="0dp"
+                android:textAlignment="center"
                 android:checked="true"
-                android:text="Grab Dream Deals at Just Rs.1 with Coins!"
+                android:fontFamily="@font/titania_regular"
+                android:text="Grab Dream Deals at Just Rs.1"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_card"
-android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_card"
-                app:layout_constraintTop_toTopOf="@+id/img_card" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -120,7 +120,7 @@ class DetailActivity : AppCompatActivity() {
 //                        }
 //                    }
                     uiScope.launch {
-                        binding.price.text = ((quantity * price).toString())
+                        binding.price.text = "₹" + ((quantity * price).toString())
                         binding.textQuantity.text = quantity.toString()
                     }
 
@@ -142,17 +142,20 @@ class DetailActivity : AppCompatActivity() {
                         }
                     }
                     if (index > -1) {
-                        dataItem?.countSelected=binding.textQuantity.text.toString().toInt()
-                        if (binding.textQuantity.text.toString().toInt()>0)
-                        dataItem?.let { it1 -> list.add(it1) }
-                        else{}
+                        dataItem?.countSelected = binding.textQuantity.text.toString().toInt()
+                        if (binding.textQuantity.text.toString().toInt() > 0)
+                            dataItem?.let { it1 -> list.add(it1) }
+                        else {
+                        }
                     } else {
                     }
 
                 } else {
-                    if (binding.textQuantity.text.toString().toInt()>0)
+                    if (binding.textQuantity.text.toString().toInt() > 0)
                         dataItem?.let { it1 -> list.add(it1) }
-                    else{}                }
+                    else {
+                    }
+                }
             }
             Log.d("121212", " ${Utils.product?.size}   ${Utils.product}")
             val intent = Intent(this, CartActivity::class.java)
@@ -203,11 +206,11 @@ class DetailActivity : AppCompatActivity() {
                         binding.price.text = item.price.toString()
                         item.countSelected?.let { quantity = it }
                         binding.price.text = (quantity * price).toString()
-                        binding.pricePerItem.text = price.toString()
+                        binding.pricePerItem.text = "₹" + price.toString()
                     } else {
                         binding.textQuantity.text = quantity.toString()
                         binding.price.text = (quantity * price).toString()
-                        binding.pricePerItem.text = price.toString()
+                        binding.pricePerItem.text = "₹" + price.toString()
 
                     }
 
@@ -215,7 +218,7 @@ class DetailActivity : AppCompatActivity() {
             } else {
                 binding.textQuantity.text = "0"
                 binding.price.text = "0"
-                binding.pricePerItem.text = price.toString()
+                binding.pricePerItem.text = "₹" + price.toString()
 
             }
         }

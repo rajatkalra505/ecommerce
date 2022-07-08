@@ -6,6 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoginActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="@color/white"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        android:elevation="5dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_collapseMode="pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/image_back"
+            />
+
+
+        <com.friendspire.myecommerce.utils.views.CustomView
+            android:id="@+id/product_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:fontFamily="@font/titania_regular"
+            android:text="Privacy and Policy"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+
+    </androidx.appcompat.widget.Toolbar>
 
     <View
         android:id="@+id/view"
@@ -50,6 +98,7 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="First Name"
+            android:fontFamily="@font/titania_regular"
             android:padding="10dp"
             android:textAllCaps="false"
             android:textCursorDrawable="@color/purple_200"
@@ -93,6 +142,7 @@ app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_const
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="Last Name"
+            android:fontFamily="@font/titania_regular"
             android:padding="10dp"
             android:textAllCaps="false"
             android:textCursorDrawable="@color/purple_200"
@@ -132,6 +182,7 @@ app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_const
             android:layout_marginStart="5dp"
             android:background="@null"
             android:hint="Email"
+            android:fontFamily="@font/titania_regular"
             android:inputType="textWebEmailAddress"
             android:textAllCaps="false"
             android:textCursorDrawable="@color/purple_200"
@@ -181,6 +232,7 @@ app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_const
             android:layout_marginStart="5dp"
             android:background="@null"
             android:hint="Password"
+            android:fontFamily="@font/titania_regular"
             android:inputType="textPassword"
             android:textAllCaps="false"
             android:textCursorDrawable="@color/purple_200"
@@ -233,6 +285,7 @@ app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_const
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000080"
+            android:fontFamily="@font/titania_regular"
             android:text="@string/please_accept_terms_and_condition"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -245,6 +298,7 @@ app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_const
         android:padding="10dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
+        android:fontFamily="@font/titania_regular"
         android:background="@drawable/rounded_corner_blue_border"
         android:backgroundTint="@color/purple_200"
         android:text="@string/sign_up"
@@ -261,9 +315,14 @@ app:layout_constraintEnd_toStartOf="@id/clear_fname"            app:layout_const
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:visibility="gone"
-        android:layout_height="match_parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

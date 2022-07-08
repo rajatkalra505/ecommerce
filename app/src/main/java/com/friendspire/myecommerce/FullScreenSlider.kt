@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
 import com.friendspire.myecommerce.adapters.SliderAdapter
 import com.friendspire.myecommerce.databinding.FragmentMobileBinding
 import com.friendspire.myecommerce.utils.Utils
+import kotlin.math.abs
 
 class FullScreenSlider(
     images: List<Int>?
@@ -55,7 +60,19 @@ class FullScreenSlider(
             }
         binding.viewPager.apply {
             this.adapter = adapter
+            clipToPadding = false
+            clipChildren = false
+            offscreenPageLimit = 3
+            getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
         }
+
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer(40))
+        compositePageTransformer.addTransformer((ViewPager2.PageTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = 0.85F + r * .15F
+        }))
+        binding.viewPager.setPageTransformer(compositePageTransformer)
         
     }
 

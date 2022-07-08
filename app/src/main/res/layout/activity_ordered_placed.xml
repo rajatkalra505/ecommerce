@@ -39,7 +39,7 @@
                 android:text="Succesfull"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
 
         </LinearLayout>
@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:gravity="center"
+        android:fontFamily="@font/titania_regular"
         android:text="Your Order Has Been Placed Successfully"
         android:textColor="#3A4455"
         android:textSize="24sp"
@@ -66,6 +67,7 @@
         android:layout_height="wrap_content"
         android:text="Order Id :232342S35D45D45"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/titania_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label" />
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="HardcodedText">
+ >
 
 
 
@@ -30,6 +30,8 @@
             android:background="@color/white"
             app:itemIconTint="@drawable/navigation_view_colored"
             app:itemTextColor="#232323"
+            app:itemTextAppearanceActive="@style/tab_text"
+            app:itemTextAppearanceInactive="@style/tab_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemTextAppearance="@style/tab_text"
         app:menu="@menu/navigation_menu" />
 
 

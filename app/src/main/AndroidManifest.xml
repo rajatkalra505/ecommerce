@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.friendspire.myecommerce">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA"/>
 
@@ -27,7 +28,8 @@
         <activity android:name=".activity.NotificationActivity"/>
         <activity
             android:name=".activity.LobbyActivity"
-            android:theme="@style/Theme.ActionBar" />
+            android:theme="@style/Theme.ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
 
         <!--android:theme="@style/Theme.MaterialComponents.DayNight"-->
 

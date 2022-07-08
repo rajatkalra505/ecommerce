@@ -47,13 +47,14 @@
                 android:text="Enter Card Details"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/label_card_number"
         android:layout_width="wrap_content"
+        android:fontFamily="@font/titania_regular"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:text="Credit Card Number"
@@ -68,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
         android:inputType="number"
+        android:fontFamily="@font/titania_regular"
         android:backgroundTint="#3A4455"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +91,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/titania_regular"
         android:text="Valid thru"
         android:gravity="bottom"
         android:textColor="#3A4455"
@@ -103,6 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:gravity="bottom"
+        android:fontFamily="@font/titania_regular"
         android:drawableEnd="@drawable/img_ques"
         android:text="CVV"
         android:textColor="#3A4455"
@@ -170,6 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/titania_regular"
         android:text="Card holder's name"
         android:textColor="#3A4455"
         android:textSize="16sp"
@@ -183,6 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/titania_regular"
         android:backgroundTint="#3A4455"
         android:inputType="textCapCharacters"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,6 +203,7 @@
         android:layout_margin="10dp"
         android:background="@drawable/btn_selector"
         android:text="Pay now"
+        android:fontFamily="@font/titania_regular"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

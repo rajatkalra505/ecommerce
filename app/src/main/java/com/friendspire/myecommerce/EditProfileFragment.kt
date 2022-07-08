@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
@@ -21,7 +22,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.friendspire.myecommerce.databinding.FragmentEditProfileBinding
+
 
 class EditProfileFragment : Fragment() {
     private lateinit var binding: FragmentEditProfileBinding
@@ -35,7 +38,20 @@ class EditProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initValue()
         setClickListners()
+         }
+
+    private fun initValue() {
+        val preferences =context?.getSharedPreferences("My_pref",0)
+        val fname = preferences?.getString("fnamekey","")
+        val lname = preferences?.getString("lnamekey","")
+        val email = preferences?.getString("emailkey","")
+        binding.textName.setText(fname)
+        binding.textAge.setText(lname)
+        binding.textPhone.setText(email)
+
+
     }
 
     private fun setClickListners() {
@@ -79,21 +95,20 @@ class EditProfileFragment : Fragment() {
             } == PackageManager.PERMISSION_GRANTED) {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             getResult.launch(cameraIntent)
-            Toast.makeText(context, "1", Toast.LENGTH_SHORT).show()
+           // Toast.makeText(context, "1", Toast.LENGTH_SHORT).show()
         } else {
-            if (activity?.let {
-                    ActivityCompat.shouldShowRequestPermissionRationale(
-                        it,
-                        Manifest.permission.CAMERA
-                    )
-                } == true) {
+            if (activity?.let { ActivityCompat.shouldShowRequestPermissionRationale(it, Manifest.permission.CAMERA)
+                } == false) {
                 requestPermissionLauncher.launch(
                     Manifest.permission.CAMERA
                 )
-                Toast.makeText(context, "2", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(context, "2", Toast.LENGTH_SHORT).show()
             } else {
-                openSettingPermissionForApp()
-            }
+                //Toast.makeText(context, "3", Toast.LENGTH_SHORT).show()
+                    openSettingPermissionForApp()
+                }
+
+
         }
     }
 

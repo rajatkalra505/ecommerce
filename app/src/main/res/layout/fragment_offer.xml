@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/titania_regular"
         android:layout_marginTop="20dp"
         android:text="Rapid Fire Deals"
         android:textColor="#151767"
@@ -35,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/titania_regular"
         android:text="Limited Stock | 24 Hrs Only"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -47,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Ends in "
+        android:fontFamily="@font/titania_regular"
         app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
@@ -73,56 +77,13 @@
         app:lottie_loop="true"
         app:lottie_url="https://assets8.lottiefiles.com/packages/lf20_ko9ahj1s.json" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/offerone"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:elevation="5dp"
-        android:translationZ="4dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/offertwo"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offer_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timer" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/offertwo"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:elevation="5dp"
-        android:translationZ="4dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/offerone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/offerone"
-        app:layout_constraintTop_toTopOf="@+id/offerone" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/offerthree"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:elevation="5dp"
-        android:translationZ="4dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/offerfour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/offerone" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/offerfour"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:elevation="5dp"
-        android:translationZ="4dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/offerthree"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/offerthree"
-        app:layout_constraintTop_toTopOf="@+id/offerthree" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

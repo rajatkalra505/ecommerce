@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.friendspire.myecommerce.R
 import com.friendspire.myecommerce.databinding.ActivityPaymentDetailBinding
 import com.friendspire.myecommerce.utils.Utils
+
 
 class PaymentDetailActivity : AppCompatActivity() {
     var currentYear = Utils.getCurrentYear()
@@ -68,11 +70,17 @@ class PaymentDetailActivity : AppCompatActivity() {
 
         }
     private fun Validate(): Boolean {
+        
         return !binding.edittextCardNumber.text.isNullOrEmpty()
                 && !binding.month.isSelected
                 && !binding.year.isSelected
                 && !binding.cvv.text.isNullOrEmpty()
+                && binding.cvv.text.toString().length==3
+                && binding.edittextCardNumber.text.toString().length>18
                 && !binding.edittextCardHolderName.text.isNullOrEmpty()
+                && binding.month.selectedItem!="MM"
+                && binding.year.selectedItem!="YY"
+
 
 
     }
@@ -80,7 +88,7 @@ class PaymentDetailActivity : AppCompatActivity() {
         binding.btnContinue.setOnClickListener {
             if (Validate()) {
                 val intent = Intent(this, OrderedPlacedActivity::class.java)
-                getResult.launch(intent)
+               getResult.launch(intent)
             }
             else
                 Toast.makeText(this, "Please Enter all details", Toast.LENGTH_SHORT).show()

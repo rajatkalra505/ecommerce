@@ -47,7 +47,7 @@
                 android:text="Payment Method"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
 
         </LinearLayout>
@@ -97,6 +97,7 @@
                 android:layout_marginEnd="20dp"
                 android:checked="true"
                 android:layoutDirection="rtl"
+                android:fontFamily="@font/titania_regular"
                 android:text="Credit Card"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
@@ -129,6 +130,7 @@
                 android:id="@+id/btn_cash"
                 android:layout_width="0dp"
                 android:layout_height="24dp"
+                android:fontFamily="@font/titania_regular"
                 android:layout_marginEnd="20dp"
                 android:layoutDirection="rtl"
                 android:text="Cash"
@@ -167,6 +169,7 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="20dp"
                 android:layoutDirection="rtl"
+                android:fontFamily="@font/titania_regular"
                 android:text="QR Scan"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
@@ -202,6 +205,7 @@
                 android:layoutDirection="rtl"
                 android:text="Wallet"
                 android:textColor="#3A4455"
+                android:fontFamily="@font/titania_regular"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_wallet"
                 app:layout_constraintLeft_toRightOf="@+id/img_wallet"
@@ -228,6 +232,7 @@
         android:background="@drawable/btn_selector"
         android:text="Continue"
         android:textColor="@color/white"
+        android:fontFamily="@font/titania_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
