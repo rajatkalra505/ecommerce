@@ -1,11 +1,10 @@
 package com.friendspire.myecommerce.activity
 
-import android.app.Activity
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.friendspire.myecommerce.adapters.CartAdapter
@@ -42,28 +41,9 @@ class CartActivity : AppCompatActivity() {
     private val getResult =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ) {
-            if (it.resultCode == Activity.RESULT_OK) {
-            }
+        ) {}
 
-        }
-
-
-    private fun showAlert() {
-        val dialog: AlertDialog.Builder = AlertDialog.Builder(this)
-        dialog.setCancelable(false)
-        dialog.setTitle("Orderd Placed")
-        dialog.setPositiveButton("Ok") { _, _ ->
-            Utils.product?.clear()
-            val intent = Intent()
-            setResult(Activity.RESULT_OK, intent)
-            this.finish()
-
-        }
-        val alert: AlertDialog = dialog.create()
-        alert.show()
-    }
-
+    @SuppressLint("SetTextI18n")
     private fun getTotalPrice() {
         var total = 0
         Utils.product?.let { list ->

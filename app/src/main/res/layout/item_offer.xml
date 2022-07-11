@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/titania_regular"
-                android:text="Limited Offers"
+                android:text="@string/limited_offers"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/titania_regular"
-                android:text="Limited Offers"
+                android:text="@string/limited_offers"
                 android:textColor="#0EB010"
                 android:textSize="12sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>

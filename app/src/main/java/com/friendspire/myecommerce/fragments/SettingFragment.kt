@@ -1,6 +1,5 @@
 package com.friendspire.myecommerce.fragments
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +10,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import com.friendspire.myecommerce.EditProfileFragment
+import com.friendspire.myecommerce.R
 import com.friendspire.myecommerce.activity.HelpActivity
 import com.friendspire.myecommerce.activity.LobbyActivity
 import com.friendspire.myecommerce.activity.LobbyActivity.Companion.text_view_header
@@ -34,7 +33,7 @@ class SettingFragment : Fragment() {
             override fun handleOnBackPressed() {
                 if (binding.webView.visibility == View.VISIBLE) {
                     binding.webView.visibility = View.GONE
-                    text_view_header?.text = "Settings"
+                    text_view_header?.text = getString(R.string.setting)
                 } else {
                     val numberOfFragment = activity?.supportFragmentManager?.fragments?.size ?: 0
                     Log.e("numberOFFrags", numberOfFragment.toString())
@@ -74,7 +73,7 @@ class SettingFragment : Fragment() {
             getResult.launch(intent)
         }
         binding.btnWallet.setOnClickListener {
-            text_view_header?.text = "Privacy and Policy"
+            text_view_header?.text = getString(R.string.privacy_and_policy)
             binding.webView.visibility = View.VISIBLE
             binding.webView.loadUrl("https://www.termsfeed.com/live/b506f00c-22ca-4910-b820-e9d8eacec9ac")
         }
@@ -96,10 +95,6 @@ class SettingFragment : Fragment() {
     private val getResult =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ) {
-            if (it.resultCode == Activity.RESULT_OK) {
-            }
-
-        }
+        ) { }
 
 }

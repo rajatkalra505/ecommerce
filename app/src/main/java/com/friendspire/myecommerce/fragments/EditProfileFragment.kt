@@ -1,11 +1,10 @@
-package com.friendspire.myecommerce
+package com.friendspire.myecommerce.fragments
 
 import android.Manifest
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
@@ -16,13 +15,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.preference.PreferenceManager
 import com.friendspire.myecommerce.databinding.FragmentEditProfileBinding
 
 
@@ -40,13 +37,13 @@ class EditProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initValue()
         setClickListners()
-         }
+    }
 
     private fun initValue() {
-        val preferences =context?.getSharedPreferences("My_pref",0)
-        val fname = preferences?.getString("fnamekey","")
-        val lname = preferences?.getString("lnamekey","")
-        val email = preferences?.getString("emailkey","")
+        val preferences = context?.getSharedPreferences("My_pref", 0)
+        val fname = preferences?.getString("fnamekey", "")
+        val lname = preferences?.getString("lnamekey", "")
+        val email = preferences?.getString("emailkey", "")
         binding.textName.setText(fname)
         binding.textAge.setText(lname)
         binding.textPhone.setText(email)
@@ -66,10 +63,6 @@ class EditProfileFragment : Fragment() {
         }
         binding.camera.setOnClickListener {
             onClickRequestPermission()
-//                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//                getResult.launch(cameraIntent)
-
-
         }
     }
 
@@ -95,18 +88,19 @@ class EditProfileFragment : Fragment() {
             } == PackageManager.PERMISSION_GRANTED) {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             getResult.launch(cameraIntent)
-           // Toast.makeText(context, "1", Toast.LENGTH_SHORT).show()
         } else {
-            if (activity?.let { ActivityCompat.shouldShowRequestPermissionRationale(it, Manifest.permission.CAMERA)
+            if (activity?.let {
+                    ActivityCompat.shouldShowRequestPermissionRationale(
+                        it,
+                        Manifest.permission.CAMERA
+                    )
                 } == false) {
                 requestPermissionLauncher.launch(
                     Manifest.permission.CAMERA
                 )
-               // Toast.makeText(context, "2", Toast.LENGTH_SHORT).show()
             } else {
-                //Toast.makeText(context, "3", Toast.LENGTH_SHORT).show()
-                    openSettingPermissionForApp()
-                }
+                openSettingPermissionForApp()
+            }
 
 
         }

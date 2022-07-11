@@ -1,13 +1,12 @@
-package com.friendspire.myecommerce
+package com.friendspire.myecommerce.adapters
 
-import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.friendspire.myecommerce.fragments.FurnitureFragment
 
 
 class MyTabAdapter(
-    private val myContext: Context,
     fm: FragmentManager,
     private var totalTabs: Int
 ) : FragmentPagerAdapter(fm) {
@@ -29,10 +28,7 @@ class MyTabAdapter(
                 return fragment
             }
             else -> {
-                val fragment = FurnitureFragment()
-                
-                return fragment
-                //getItem(position)
+                return FurnitureFragment()
             }
         }
     }

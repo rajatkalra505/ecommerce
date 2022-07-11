@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -13,20 +12,16 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:gravity="center_vertical"
-
-            >
-
+            android:gravity="center_vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_card"
@@ -38,17 +33,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_tittle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:lineSpacingExtra="0dp"
-                android:textAlignment="center"
                 android:checked="true"
                 android:fontFamily="@font/titania_regular"
-                android:text="Grab Dream Deals at Just Rs.1"
+                android:lineSpacingExtra="0dp"
+                android:text="@string/grab_dream_deals_at_just_rs_1"
+                android:textAlignment="center"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"

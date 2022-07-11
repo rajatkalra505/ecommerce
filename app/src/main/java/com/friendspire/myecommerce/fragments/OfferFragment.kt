@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.friendspire.myecommerce.OfferAdapter
+import com.friendspire.myecommerce.adapters.OfferAdapter
 import com.friendspire.myecommerce.R
-import com.friendspire.myecommerce.data.NotificationData
 import com.friendspire.myecommerce.data.OfferData
 import com.friendspire.myecommerce.databinding.FragmentOfferBinding
 
@@ -48,9 +47,7 @@ class OfferFragment : Fragment() {
 
     private fun setAdapter() {
         binding.offerRecycler.layoutManager = GridLayoutManager(context, 2)
-
-        //  LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        mAdapter = context?.let { OfferAdapter(list, it, onItemClicked) }
+        mAdapter = context?.let { OfferAdapter(list, onItemClicked) }
 
         binding.offerRecycler.adapter = mAdapter
     }
@@ -64,7 +61,7 @@ class OfferFragment : Fragment() {
 
     }
 
-    private val onItemClicked: (Int) -> Unit = { position ->
+    private val onItemClicked: (Int) -> Unit = { _ ->
 
     }
 

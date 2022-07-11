@@ -1,4 +1,4 @@
-package com.friendspire.myecommerce
+package com.friendspire.myecommerce.fragments
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -22,13 +22,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.friendspire.myecommerce.R
 import com.friendspire.myecommerce.activity.DetailActivity
 import com.friendspire.myecommerce.adapters.MyAdapter
 import com.friendspire.myecommerce.data.MyDataResponse
 import com.friendspire.myecommerce.databinding.FragmentFurnitureBinding
 import com.friendspire.myecommerce.repository.MyModel
 import com.friendspire.myecommerce.utils.Utils
-import kotlinx.android.synthetic.main.fragment_furniture.*
 import java.util.*
 
 
@@ -217,7 +217,7 @@ class FurnitureFragment : Fragment() {
             }
         }
         adapter = activity?.let {
-            MyAdapter(mTempList, it, onItemClicked)
+            MyAdapter(mTempList, onItemClicked)
         }
 
         binding.recyclerViewDummyData.adapter = adapter

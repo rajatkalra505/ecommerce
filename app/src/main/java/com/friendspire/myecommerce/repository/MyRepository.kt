@@ -1,6 +1,5 @@
 package com.friendspire.myecommerce.repository
 
-import android.util.Log
 import com.friendspire.myecommerce.api.RetrofitHelper
 import com.friendspire.myecommerce.data.MyDataResponse
 import retrofit2.Call
@@ -11,7 +10,7 @@ object MyRepository {
 
     private val retrofitHelper = RetrofitHelper.retrofitHelper
 
-     fun getData(
+    fun getData(
         successHandler: (List<MyDataResponse>) -> Unit,
         failureHandler: (String) -> Unit,
         onFailure: (Throwable) -> Unit

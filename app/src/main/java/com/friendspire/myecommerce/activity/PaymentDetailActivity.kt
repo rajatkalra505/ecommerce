@@ -1,6 +1,5 @@
 package com.friendspire.myecommerce.activity
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -9,7 +8,6 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -20,8 +18,8 @@ import com.friendspire.myecommerce.utils.Utils
 
 
 class PaymentDetailActivity : AppCompatActivity() {
-    var currentYear = Utils.getCurrentYear()
-    var nextYear = currentYear + 10
+    private var currentYear = Utils.getCurrentYear()
+    private var nextYear = currentYear + 10
     private var current = ""
     private lateinit var binding: ActivityPaymentDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,36 +59,31 @@ class PaymentDetailActivity : AppCompatActivity() {
 
 
     }
+
     private val getResult =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ) {
-            if (it.resultCode == Activity.RESULT_OK) {
-            }
+        ) {}
 
-        }
-    private fun Validate(): Boolean {
-        
+    private fun validate(): Boolean {
+
         return !binding.edittextCardNumber.text.isNullOrEmpty()
                 && !binding.month.isSelected
                 && !binding.year.isSelected
                 && !binding.cvv.text.isNullOrEmpty()
-                && binding.cvv.text.toString().length==3
-                && binding.edittextCardNumber.text.toString().length>18
+                && binding.cvv.text.toString().length == 3
+                && binding.edittextCardNumber.text.toString().length > 18
                 && !binding.edittextCardHolderName.text.isNullOrEmpty()
-                && binding.month.selectedItem!="MM"
-                && binding.year.selectedItem!="YY"
-
-
-
+                && binding.month.selectedItem != "MM"
+                && binding.year.selectedItem != "YY"
     }
+
     private fun setListners() {
         binding.btnContinue.setOnClickListener {
-            if (Validate()) {
+            if (validate()) {
                 val intent = Intent(this, OrderedPlacedActivity::class.java)
-               getResult.launch(intent)
-            }
-            else
+                getResult.launch(intent)
+            } else
                 Toast.makeText(this, "Please Enter all details", Toast.LENGTH_SHORT).show()
         }
         binding.imgBack.setOnClickListener {
@@ -113,14 +106,14 @@ class PaymentDetailActivity : AppCompatActivity() {
                 Log.d("121212", "afterTextChanged: ${s?.length}")
                 if (s.toString() != current) {
                     val userInput = s.toString().replace(Regex("[^\\d]"), "")
-                    if (userInput.length ==4) {
-                        binding.imgVisa.visibility=View.VISIBLE
+                    if (userInput.length == 4) {
+                        binding.imgVisa.visibility = View.VISIBLE
                     }
                     if (userInput.isEmpty()) {
-                        binding.imgVisa.visibility=View.GONE
+                        binding.imgVisa.visibility = View.GONE
 
                     }
-                        if (userInput.length <= 16) {
+                    if (userInput.length <= 16) {
                         current = userInput.chunked(4).joinToString(" ")
                         s?.filters = arrayOfNulls<InputFilter>(0)
                     }

@@ -1,9 +1,9 @@
 package com.friendspire.myecommerce.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -45,6 +45,7 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setClickListners() {
         binding.share.setOnClickListener {
             Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
@@ -53,7 +54,6 @@ class DetailActivity : AppCompatActivity() {
                 putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
                 type = "text/plain"
             }
-
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }
@@ -65,38 +65,9 @@ class DetailActivity : AppCompatActivity() {
             ioScope.launch {
                 quantity++
                 dataItem?.countSelected = quantity
-//                val dataItem = MyDataResponse().apply {
-//                    id = this@DetailActivity.id
-//                    price = this@DetailActivity.price
-//                    title = this@DetailActivity.title
-//                    url = this@DetailActivity.image
-//                    countSelected = quantity
-//                }
-//                Utils.product?.let { list ->
-//                    if (list.isNotEmpty()) {
-//                        var index = -1
-//                        for (i in 0 until list.size) {
-//                            if (this@DetailActivity.id != list[i].id) {
-//                                index = i
-//                            } else {
-//                                list[i].countSelected = list[i].countSelected?.plus(1)
-//                                index = -1
-//                                break
-//                            }
-//                        }
-//                        if (index > -1) {
-//                            list.add(dataItem)
-//                        } else {
-//                        }
-//
-//                    } else {
-//                        list.add(dataItem)
-//                    }
-//                }
                 uiScope.launch {
                     binding.price.text = "₹" + ((quantity * price).toString())
                     binding.textQuantity.text = quantity.toString()
-                    Log.d("121212", "setClickListners: ${Utils.product}")
                 }
             }
         }
@@ -105,27 +76,11 @@ class DetailActivity : AppCompatActivity() {
                 if (quantity > 0) {
                     quantity--
                     dataItem?.countSelected = quantity
-//                    Utils.product?.let { list ->
-//
-//                        if (list.isNotEmpty()) {
-//                            for (i in 0 until list.size) {
-//                                if (this@DetailActivity.id == list[i].id) {
-//                                    if (list[i].countSelected == 1) {
-//                                        list.removeAt(i)
-//                                    } else {
-//                                        list[i].countSelected = list[i].countSelected?.minus(1)
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
                     uiScope.launch {
                         binding.price.text = "₹" + ((quantity * price).toString())
                         binding.textQuantity.text = quantity.toString()
                     }
-
                 }
-
             }
         }
         binding.buttonAddToCart.setOnClickListener {
@@ -149,7 +104,6 @@ class DetailActivity : AppCompatActivity() {
                         }
                     } else {
                     }
-
                 } else {
                     if (binding.textQuantity.text.toString().toInt() > 0)
                         dataItem?.let { it1 -> list.add(it1) }
@@ -157,7 +111,6 @@ class DetailActivity : AppCompatActivity() {
                     }
                 }
             }
-            Log.d("121212", " ${Utils.product?.size}   ${Utils.product}")
             val intent = Intent(this, CartActivity::class.java)
             getResult.launch(intent)
         }
@@ -181,10 +134,7 @@ class DetailActivity : AppCompatActivity() {
         title = arguments?.getString("ITEM_TITLE")
         image = arguments?.getString("ITEM_URL")
         price = arguments?.getInt(Utils.ITEM_PRICE) ?: 0
-//        binding.textQuantity.text = quantity.toString()
-        // binding.price.text = "0"
         setList()
-
 
         dataItem = MyDataResponse().apply {
             id = this@DetailActivity.id
@@ -196,6 +146,7 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setList() {
         Utils.product?.let { list ->
             if (list.isNotEmpty()) {
@@ -206,11 +157,11 @@ class DetailActivity : AppCompatActivity() {
                         binding.price.text = item.price.toString()
                         item.countSelected?.let { quantity = it }
                         binding.price.text = (quantity * price).toString()
-                        binding.pricePerItem.text = "₹" + price.toString()
+                        binding.pricePerItem.text = "₹$price"
                     } else {
                         binding.textQuantity.text = quantity.toString()
                         binding.price.text = (quantity * price).toString()
-                        binding.pricePerItem.text = "₹" + price.toString()
+                        binding.pricePerItem.text = "₹$price"
 
                     }
 
@@ -218,18 +169,13 @@ class DetailActivity : AppCompatActivity() {
             } else {
                 binding.textQuantity.text = "0"
                 binding.price.text = "0"
-                binding.pricePerItem.text = "₹" + price.toString()
+                binding.pricePerItem.text = "₹$price"
 
             }
         }
     }
 
     private fun setData() {
-//        Glide.with(binding.myImage)
-//            .load("$image.png")
-//            .placeholder(R.drawable.placeholder)
-//            .into(binding.myImage)
-        // binding.title.text = title
         binding.title.text = resources.getString(R.string.dummy_text)
 
         images = listOf(
@@ -272,8 +218,6 @@ class DetailActivity : AppCompatActivity() {
                 changeColor()
             }
         })
-
-
     }
 
     private val onClick: (Int) -> Unit = { position ->

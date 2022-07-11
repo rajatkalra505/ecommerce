@@ -1,6 +1,5 @@
-package com.friendspire.myecommerce
+package com.friendspire.myecommerce.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +9,6 @@ import com.friendspire.myecommerce.databinding.ItemOfferBinding
 
 class OfferAdapter(
     var mList: List<OfferData?>?,
-    var mContext: Context,
     private val onItemClicked: (Int) -> Unit
 ) : RecyclerView.Adapter<OfferAdapter.MyHolder>() {
 
@@ -37,9 +35,10 @@ class OfferAdapter(
             }
         }
 
+
         fun bindItems(data: OfferData) {
-            myItemBinding.title.text=data.title
-            myItemBinding.off.text=data.discount
+            myItemBinding.title.text = data.title
+            myItemBinding.off.text = data.discount
             data.photoUrl?.let { myItemBinding.imgCategory.setImageResource(it) }
 
         }

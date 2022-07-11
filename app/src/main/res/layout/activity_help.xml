@@ -46,7 +46,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/titania_regular"
-                android:text="Help"
+                android:text="@string/help"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/titania_regular"
                     android:padding="10dp"
-                    android:text="Please Read For Help"
+                    android:text="@string/please_read_for_help"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 

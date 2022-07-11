@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.view_pager_item.view.*
 class SliderAdapter(private val images: List<Int>,private val onItemClicked :(Int)->Unit
 ) :
     RecyclerView.Adapter<SliderAdapter.ViewPagerViewHolder>() {
-
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
             itemView.indicator_image?.setOnClickListener {
@@ -19,7 +18,6 @@ class SliderAdapter(private val images: List<Int>,private val onItemClicked :(In
             }
         }
         val imageView: ImageView = itemView.findViewById(R.id.indicator_image)
-
     }
 
     override fun onCreateViewHolder(
@@ -35,8 +33,6 @@ class SliderAdapter(private val images: List<Int>,private val onItemClicked :(In
         val curImage = images[position]
         holder.imageView.setImageResource(curImage)
     }
-
-
     override fun getItemCount(): Int {
         return images.size
     }

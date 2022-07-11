@@ -68,6 +68,5 @@ class CartAdapter(
                 myItemBinding.mainCard.visibility=View.GONE
             }
         }
-
     }
 }

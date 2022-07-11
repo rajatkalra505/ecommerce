@@ -41,7 +41,6 @@ class SignUp : AppCompatActivity() {
                     binding.clearFname.visibility = View.GONE
                 } else {
                     binding.clearFname.visibility = View.VISIBLE
-
                 }
             }
         })
@@ -53,7 +52,6 @@ class SignUp : AppCompatActivity() {
                     binding.clearLname.visibility = View.GONE
                 } else {
                     binding.clearLname.visibility = View.VISIBLE
-
                 }
             }
         })
@@ -65,7 +63,6 @@ class SignUp : AppCompatActivity() {
                     binding.clearEmail.visibility = View.GONE
                 } else {
                     binding.clearEmail.visibility = View.VISIBLE
-
                 }
             }
         })
@@ -77,11 +74,9 @@ class SignUp : AppCompatActivity() {
                     binding.clearPassword.visibility = View.GONE
                 } else {
                     binding.clearPassword.visibility = View.VISIBLE
-
                 }
             }
         })
-
 
         binding.textTermsAndCondition.setOnClickListener {
             binding.webView.visibility = View.VISIBLE
@@ -133,7 +128,6 @@ class SignUp : AppCompatActivity() {
                 && !binding.textLname.text.isNullOrEmpty()
                 && isEmailValid(binding.textEmail.text.toString())
                 && binding.materialCheckBox.isChecked
-
     }
 
     private fun isEmailValid(email: String): Boolean {

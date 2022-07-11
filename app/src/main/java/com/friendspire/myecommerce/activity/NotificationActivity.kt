@@ -38,12 +38,12 @@ class NotificationActivity : AppCompatActivity() {
     private fun setAdapter() {
         binding.recyclerNotification.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        nAdapter = NotificationAdapter(list, this, onItemClicked)
+        nAdapter = NotificationAdapter(list, onItemClicked)
 
         binding.recyclerNotification.adapter = nAdapter
     }
 
-    private val onItemClicked: (Int) -> Unit = { position ->
+    private val onItemClicked: (Int) -> Unit = { _ ->
 
     }
 

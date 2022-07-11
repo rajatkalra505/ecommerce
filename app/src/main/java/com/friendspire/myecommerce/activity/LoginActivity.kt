@@ -77,5 +77,4 @@ class LoginActivity : AppCompatActivity() {
                 && Utils.isEmailValid(binding.textEmail.text.toString())
 
     }
-
 }

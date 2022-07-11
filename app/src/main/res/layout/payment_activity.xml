@@ -44,16 +44,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
-                android:text="Payment Method"
+                android:text="@string/payment_method"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-
-
         </LinearLayout>
-
     </androidx.appcompat.widget.Toolbar>
-
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -63,7 +59,6 @@
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="25dp"
-
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toTopOf="@+id/btn_continue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +74,6 @@
             app:layout_constraintTop_toTopOf="@+id/cardView"
             tools:layout_editor_absoluteX="10dp">
 
-
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_card"
                 android:layout_width="wrap_content"
@@ -89,16 +83,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/btn_credit_card"
                 android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="20dp"
                 android:checked="true"
-                android:layoutDirection="rtl"
                 android:fontFamily="@font/titania_regular"
-                android:text="Credit Card"
+                android:layoutDirection="rtl"
+                android:text="@string/credit_card"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_card"
@@ -130,10 +123,10 @@
                 android:id="@+id/btn_cash"
                 android:layout_width="0dp"
                 android:layout_height="24dp"
-                android:fontFamily="@font/titania_regular"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/titania_regular"
                 android:layoutDirection="rtl"
-                android:text="Cash"
+                android:text="@string/cash"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_cash"
@@ -160,17 +153,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/materialDivider2" />
 
-
-            <!-- <com.google.android.material.radiobutton.MaterialRadioButton-->
-
             <RadioButton
                 android:id="@+id/btn_qr"
                 android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="20dp"
-                android:layoutDirection="rtl"
                 android:fontFamily="@font/titania_regular"
-                android:text="QR Scan"
+                android:layoutDirection="rtl"
+                android:text="@string/qr_scan"
                 android:textColor="#3A4455"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_qr"
@@ -202,10 +192,10 @@
                 android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="20dp"
-                android:layoutDirection="rtl"
-                android:text="Wallet"
-                android:textColor="#3A4455"
                 android:fontFamily="@font/titania_regular"
+                android:layoutDirection="rtl"
+                android:text="@string/wallet"
+                android:textColor="#3A4455"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_wallet"
                 app:layout_constraintLeft_toRightOf="@+id/img_wallet"
@@ -230,9 +220,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/btn_selector"
-        android:text="Continue"
-        android:textColor="@color/white"
         android:fontFamily="@font/titania_regular"
+        android:text="@string/continuee"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
