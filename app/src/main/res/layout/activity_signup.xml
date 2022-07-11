@@ -20,7 +20,6 @@
         android:visibility="gone"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
-
         app:contentInsetRight="0dp"
         app:contentInsetStart="0dp"
         app:layout_collapseMode="pin"
@@ -36,7 +35,7 @@
             android:src="@drawable/image_back" />
 
 
-        <com.friendspire.myecommerce.utils.views.CustomView
+        <com.myecommerce.utils.views.CustomView
             android:id="@+id/product_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/image_back" />
 
-            <com.friendspire.myecommerce.utils.views.CustomView
+            <com.myecommerce.utils.views.CustomView
                 android:layout_width="match_parent"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
@@ -54,7 +54,7 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <com.friendspire.myecommerce.utils.views.CustomView
+    <com.myecommerce.utils.views.CustomView
         android:id="@+id/empty_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <com.friendspire.myecommerce.utils.views.CustomView
+            <com.myecommerce.utils.views.CustomView
                 android:id="@+id/label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <com.friendspire.myecommerce.utils.views.CustomView
+            <com.myecommerce.utils.views.CustomView
                 android:id="@+id/totalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

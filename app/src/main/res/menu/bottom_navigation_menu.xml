@@ -4,17 +4,17 @@
         android:id="@+id/page_1"
         android:enabled="true"
         android:icon="@drawable/image_home"
-        android:title="Home"/>
+        android:title="@string/home"/>
     <item
         android:id="@+id/page_2"
         android:enabled="true"
         android:icon="@drawable/image_offer"
-        android:title="Offers"/>
+        android:title="@string/offers"/>
 
     <item
         android:id="@+id/page_3"
         android:enabled="true"
         android:icon="@drawable/image_setting"
-        android:title="Setting"/>
+        android:title="@string/setting"/>
 
 </menu>

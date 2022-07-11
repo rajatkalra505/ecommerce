@@ -9,14 +9,13 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00a294"
+        android:background="@color/tab_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabGravity="fill"
         app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
-
         app:tabTextAppearance="@style/tab_text"
         app:tabTextColor="@android:color/background_light" />
 
@@ -52,7 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:background="#00CDEA"
+                android:background="@color/offer_back"
                 android:fontFamily="@font/titania_regular"
                 android:gravity="center"
                 android:text="@string/limited_offers_24_hrs_only"

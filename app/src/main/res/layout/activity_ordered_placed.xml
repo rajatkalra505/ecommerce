@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp">
 
-            <com.friendspire.myecommerce.utils.views.CustomView
+            <com.myecommerce.utils.views.CustomView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -54,7 +54,7 @@
         android:fontFamily="@font/titania_regular"
         android:gravity="center"
         android:text="@string/your_order_has_been_placed_successfully"
-        android:textColor="#3A4455"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,11 +62,10 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/order_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/titania_regular"
-        android:text="@string/order_id_232342s35d45d45"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label" />
@@ -79,6 +78,6 @@
         android:src="@drawable/image_credit_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/order_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

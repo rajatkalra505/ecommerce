@@ -27,7 +27,7 @@
             app:itemIconTint="@drawable/navigation_view_colored"
             app:itemTextAppearanceActive="@style/tab_text"
             app:itemTextAppearanceInactive="@style/tab_text"
-            app:itemTextColor="#232323"
+            app:itemTextColor="@color/botton_nav_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

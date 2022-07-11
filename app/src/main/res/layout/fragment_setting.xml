@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@color/card_back"
     android:clickable="true"
     android:focusable="true">
 
@@ -49,7 +49,7 @@
                 android:drawableEnd="@drawable/img_arraow_right"
                 android:fontFamily="@font/titania_regular"
                 android:text="@string/account"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_card"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_card" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider"
+                android:id="@+id/materialDividerAccount"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -73,7 +73,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_notifications"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerAccount" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -84,7 +84,7 @@
                 android:drawableEnd="@drawable/img_arraow_right"
                 android:fontFamily="@font/titania_regular"
                 android:text="@string/notification"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_cash"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +92,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_cash" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider2"
+                android:id="@+id/materialDividerNotification"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -108,7 +108,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_appearance"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider2" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerNotification" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -119,7 +119,7 @@
                 android:drawableEnd="@drawable/img_arraow_right"
                 android:fontFamily="@font/titania_regular"
                 android:text="@string/appearance"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_qr"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_qr" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider3"
+                android:id="@+id/materialDividerQr"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -142,7 +142,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_privacy"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider3" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerQr" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -153,7 +153,7 @@
                 android:drawableEnd="@drawable/img_arraow_right"
                 android:fontFamily="@font/titania_regular"
                 android:text="@string/privacy_and_security"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_wallet"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -161,7 +161,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_wallet" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider4"
+                android:id="@+id/materialDividerPrivacy"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -176,7 +176,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_support"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider4" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerPrivacy" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btn_help"
@@ -186,7 +186,7 @@
                 android:drawableEnd="@drawable/img_arraow_right"
                 android:fontFamily="@font/titania_regular"
                 android:text="@string/help_and_support"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_help"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +194,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_help" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider5"
+                android:id="@+id/materialDividerHelpsupport"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -209,7 +209,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_about"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider5" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerHelpsupport" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btn_about"
@@ -219,7 +219,7 @@
                 android:drawableEnd="@drawable/img_arraow_right"
                 android:fontFamily="@font/titania_regular"
                 android:text="@string/about"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_about"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -227,7 +227,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_about" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider6"
+                android:id="@+id/materialDividerAbout"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"

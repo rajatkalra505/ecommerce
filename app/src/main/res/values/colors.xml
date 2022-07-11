@@ -12,5 +12,13 @@
     <color name="selected">#FF132864</color>
     <color name="unselected">#80132864</color>
     <color name="background">#dddddd</color>
+    <color name="card_back">#F5F5F5</color>
+    <color name="text_back">#3A4455</color>
+    <color name="botton_nav_text">#232323</color>
+    <color name="tab_back">#00a294</color>
+    <color name="offer_back">#00CDEA</color>
+    <color name="offer_text">#151767</color>
+    <color name="timer_color">#FF0000</color>
+    <color name="green">#0EB010</color>
 
 </resources>

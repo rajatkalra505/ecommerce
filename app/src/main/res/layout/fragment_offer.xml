@@ -4,7 +4,7 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@color/card_back"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -25,7 +25,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/titania_regular"
         android:text="@string/rapid_fire_deals"
-        android:textColor="#151767"
+        android:textColor="@color/offer_text"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FF0000"
+        android:background="@color/timer_color"
         android:paddingHorizontal="10dp"
         android:textColor="@color/white"
 

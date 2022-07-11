@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@color/card_back">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/image_back" />
 
-            <com.friendspire.myecommerce.utils.views.CustomView
+            <com.myecommerce.utils.views.CustomView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -92,7 +92,7 @@
                 android:fontFamily="@font/titania_regular"
                 android:layoutDirection="rtl"
                 android:text="@string/credit_card"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_card"
                 app:layout_constraintLeft_toRightOf="@+id/img_card"
@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_card" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider"
+                android:id="@+id/materialDividerCreditCard"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -116,7 +116,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/image_rupee"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerCreditCard" />
 
 
             <com.google.android.material.radiobutton.MaterialRadioButton
@@ -127,7 +127,7 @@
                 android:fontFamily="@font/titania_regular"
                 android:layoutDirection="rtl"
                 android:text="@string/cash"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_cash"
                 app:layout_constraintLeft_toRightOf="@+id/img_cash"
@@ -135,7 +135,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_cash" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider2"
+                android:id="@+id/materialDividerCash"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -151,7 +151,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_qr"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider2" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerCash" />
 
             <RadioButton
                 android:id="@+id/btn_qr"
@@ -161,7 +161,7 @@
                 android:fontFamily="@font/titania_regular"
                 android:layoutDirection="rtl"
                 android:text="@string/qr_scan"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_qr"
                 app:layout_constraintLeft_toRightOf="@+id/img_qr"
@@ -169,7 +169,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_qr" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider3"
+                android:id="@+id/materialDividerQr"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
@@ -184,7 +184,7 @@
                 android:layout_margin="20dp"
                 android:src="@drawable/img_wallet"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialDivider3" />
+                app:layout_constraintTop_toBottomOf="@id/materialDividerQr" />
 
 
             <com.google.android.material.radiobutton.MaterialRadioButton
@@ -195,7 +195,7 @@
                 android:fontFamily="@font/titania_regular"
                 android:layoutDirection="rtl"
                 android:text="@string/wallet"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/img_wallet"
                 app:layout_constraintLeft_toRightOf="@+id/img_wallet"
@@ -203,7 +203,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_wallet" />
 
             <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/materialDivider4"
+                android:id="@+id/materialDividerWallet"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"

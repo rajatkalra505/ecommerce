@@ -3,35 +3,14 @@
     <string name="sign_up"><U>Sign Up</U></string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="please_accept_terms_and_condition"><u>Please accept terms and condition</u></string>
     <string name="product_details">Product Details</string>
     <string name="dummy_text">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum "</string>
-    <string-array name="myMonth">
-        <item>MM</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-    </string-array>
-    <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
@@ -70,7 +49,6 @@
     <string name="notifications">Notifications</string>
     <string name="succesfull">Succesfull</string>
     <string name="your_order_has_been_placed_successfully">Your Order Has Been Placed Successfully</string>
-    <string name="order_id_232342s35d45d45">Order Id :232342S35D45D45</string>
     <string name="enter_card_details">Enter Card Details</string>
     <string name="credit_card_number">Credit Card Number</string>
     <string name="valid_thru">Valid thru</string>
@@ -109,4 +87,21 @@
     <string name="qr_scan">QR Scan</string>
     <string name="wallet">Wallet</string>
     <string name="continuee">Continue</string>
+    <string name="textsend">This is my text to send.</string>
+    <string name="help_pleasw">help</string>
+    <string name="logout">Logout</string>
+    <string name="sure_logout">Are you sure want to Logout</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="grab_deales">Grab Dream Deals at Just Rs.1</string>
+    <string name="yy">YY</string>
+    <string name="mm">MM</string>
+    <string name="cvvinfo">The CVV/CVC code (Card Verification Value/Code) is located on the back of your credit/debit card on the right side of the white signature strip; it is always the last 3 digits in case of VISA and MasterCard.</string>
+    <string name="my_pref">My_pref</string>
+    <string name="terms_contion_url">https://www.termsfeed.com/live/b506f00c-22ca-4910-b820-e9d8eacec9ac</string>
+    <string name="home">Home</string>
+    <string name="offers">Offers</string>
+    <string name="price_high_to_low">Price High to Low</string>
+    <string name="price_low_to_high">Price Low to High</string>
+    <string name="my_account">My Account</string>
 </resources>

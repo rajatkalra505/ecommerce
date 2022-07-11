@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/option_1"
-        android:title="Price High to Low"
+        android:title="@string/price_high_to_low"
         android:enabled="true"
         app:showAsAction="withText"
         android:icon="@drawable/image_arrow_up"
         />
     <item android:id="@+id/option_2"
-        android:title="Price Low to High"
+        android:title="@string/price_low_to_high"
         app:showAsAction="withText"
         android:icon="@drawable/ic_baseline_arrow_downward_24"
         />

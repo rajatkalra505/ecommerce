@@ -43,7 +43,7 @@
                 android:lineSpacingExtra="0dp"
                 android:text="@string/grab_dream_deals_at_just_rs_1"
                 android:textAlignment="center"
-                android:textColor="#3A4455"
+                android:textColor="@color/text_back"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
