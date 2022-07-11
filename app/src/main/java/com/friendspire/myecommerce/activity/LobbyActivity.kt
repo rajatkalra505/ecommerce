@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -22,13 +23,14 @@ import com.friendspire.myecommerce.fragments.SettingFragment
 class LobbyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
-
+companion object{
+    var text_view_header:TextView?=null
+}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.custom_action_bar)
-
+        text_view_header = supportActionBar?.customView?.findViewById(R.id.text_action_bar)
         val homeFragment = HomeFragment()
         val offerFragment = OfferFragment()
         val settingFragment = SettingFragment()
@@ -49,10 +51,14 @@ class LobbyActivity : AppCompatActivity() {
         binding.navDrawerDashboard.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_account -> {
+                    val textView: TextView? = supportActionBar?.customView?.findViewById(R.id.text_action_bar)
+                    text_view_header?.text="Profile"
                     setCurrentFragmentForSetting(EditProfileFragment())
                     binding.navigationDrawer.closeDrawers()
                 }
                 R.id.nav_settings -> {
+                    val textView: TextView? = supportActionBar?.customView?.findViewById(R.id.text_action_bar)
+                    text_view_header?.text="Setting"
                     setCurrentFragmentForSetting(SettingFragment())
 
                     binding.navigationDrawer.closeDrawers()
@@ -67,14 +73,20 @@ class LobbyActivity : AppCompatActivity() {
         binding.bottomNavBar.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.page_1 -> {
+                    val textView: TextView? = supportActionBar?.customView?.findViewById(R.id.text_action_bar)
+                    text_view_header?.text="My Ecommerce"
                     setCurrentFragment(homeFragment)
                     true
                 }
                 R.id.page_2 -> {
+                    val textView: TextView? = supportActionBar?.customView?.findViewById(R.id.text_action_bar)
+                    text_view_header?.text="Offer"
                     setCurrentFragment(offerFragment)
                     true
                 }
                 R.id.page_3 -> {
+                    val textView: TextView? = supportActionBar?.customView?.findViewById(R.id.text_action_bar)
+                    text_view_header?.text="Setting"
                     setCurrentFragmentForSetting(settingFragment)
                     true
                 }
@@ -94,11 +106,14 @@ class LobbyActivity : AppCompatActivity() {
     }
 
     private fun setCurrentFragmentForSetting(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().apply {
-            add(binding.fragmentContainer.id, fragment)
-            addToBackStack(fragment.tag)
-            commit()
+        if (!fragment.isAdded){
+            supportFragmentManager.beginTransaction().apply {
+                add(binding.fragmentContainer.id, fragment)
+                addToBackStack(fragment.tag)
+                commit()
+            }
         }
+
     }
 
     private fun showAlert() {
@@ -131,22 +146,7 @@ class LobbyActivity : AppCompatActivity() {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true
         }
-
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val f = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        Toast.makeText(this, "$f", Toast.LENGTH_SHORT).show()
-
-        if (f is SettingFragment)
-        {
-            Toast.makeText(this, "SETING", Toast.LENGTH_SHORT).show()
-        }
-
-        //  finishAffinity()
-        Log.i("mainActvitylobbby", "yesssssssssss")
     }
 
     fun getContainer(): FragmentContainerView {

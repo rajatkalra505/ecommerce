@@ -4,12 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.friendspire.myecommerce.data.NotificationData
+import com.friendspire.myecommerce.data.OfferData
 import com.friendspire.myecommerce.databinding.ItemOfferBinding
 
 
 class OfferAdapter(
-    var mList: List<NotificationData?>?,
+    var mList: List<OfferData?>?,
     var mContext: Context,
     private val onItemClicked: (Int) -> Unit
 ) : RecyclerView.Adapter<OfferAdapter.MyHolder>() {
@@ -37,7 +37,10 @@ class OfferAdapter(
             }
         }
 
-        fun bindItems(data: NotificationData) {
+        fun bindItems(data: OfferData) {
+            myItemBinding.title.text=data.title
+            myItemBinding.off.text=data.discount
+            data.photoUrl?.let { myItemBinding.imgCategory.setImageResource(it) }
 
         }
     }

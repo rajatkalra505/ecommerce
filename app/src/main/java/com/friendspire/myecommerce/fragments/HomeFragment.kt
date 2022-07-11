@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.friendspire.myecommerce.MyTabAdapter
 import com.friendspire.myecommerce.activity.CartActivity
+import com.friendspire.myecommerce.activity.LobbyActivity
+import com.friendspire.myecommerce.activity.LobbyActivity.Companion.text_view_header
 import com.friendspire.myecommerce.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
 
@@ -27,7 +29,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         setClickListners()
-
+        text_view_header?.text = "My Ecommerce"
     }
 
     private fun initViews() {

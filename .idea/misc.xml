@@ -45,7 +45,7 @@
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_adapter_notification.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_cart_layout.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/item_offer.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_offer.xml" value="0.25" />
         <entry key="app/src/main/res/layout/my_item.xml" value="0.29296875" />
         <entry key="app/src/main/res/layout/payment_activity.xml" value="0.2549019607843137" />
         <entry key="app/src/main/res/layout/view_pager_item.xml" value="0.16032492518170158" />

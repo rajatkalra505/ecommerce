@@ -8,16 +8,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.friendspire.myecommerce.EditProfileFragment
 import com.friendspire.myecommerce.activity.HelpActivity
 import com.friendspire.myecommerce.activity.LobbyActivity
+import com.friendspire.myecommerce.activity.LobbyActivity.Companion.text_view_header
 import com.friendspire.myecommerce.activity.NotificationActivity
 import com.friendspire.myecommerce.databinding.FragmentSettingBinding
-import kotlinx.android.synthetic.main.custom_action_bar.*
 
 class SettingFragment : Fragment() {
     private lateinit var binding: FragmentSettingBinding
@@ -33,9 +32,10 @@ class SettingFragment : Fragment() {
         super.onAttach(context)
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (binding.webView.visibility == View.VISIBLE)
+                if (binding.webView.visibility == View.VISIBLE) {
                     binding.webView.visibility = View.GONE
-                else {
+                    text_view_header?.text = "Settings"
+                } else {
                     val numberOfFragment = activity?.supportFragmentManager?.fragments?.size ?: 0
                     Log.e("numberOFFrags", numberOfFragment.toString())
                     if (numberOfFragment > 0) {
@@ -44,8 +44,6 @@ class SettingFragment : Fragment() {
                         activity?.finish()
                     }
                 }
-
-              //  Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -76,6 +74,7 @@ class SettingFragment : Fragment() {
             getResult.launch(intent)
         }
         binding.btnWallet.setOnClickListener {
+            text_view_header?.text = "Privacy and Policy"
             binding.webView.visibility = View.VISIBLE
             binding.webView.loadUrl("https://www.termsfeed.com/live/b506f00c-22ca-4910-b820-e9d8eacec9ac")
         }

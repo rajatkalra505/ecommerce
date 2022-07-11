@@ -7,16 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.friendspire.myecommerce.OfferAdapter
+import com.friendspire.myecommerce.R
 import com.friendspire.myecommerce.data.NotificationData
+import com.friendspire.myecommerce.data.OfferData
 import com.friendspire.myecommerce.databinding.FragmentOfferBinding
 
 
 class OfferFragment : Fragment() {
     private lateinit var binding: FragmentOfferBinding
     private var mAdapter: OfferAdapter? = null
-    private var list = ArrayList<NotificationData>()
+    private var list = ArrayList<OfferData>()
 
 
     override fun onCreateView(
@@ -34,23 +35,21 @@ class OfferFragment : Fragment() {
     }
 
     private fun setList() {
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", true))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", false))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", false))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", false))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", true))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", true))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", false))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", false))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", false))
-        list.add(NotificationData("Grab Dream Deals at Just Rs.1", true))
+        list.add(OfferData("Car and Bike Accessories", "Extra 8% Off",R.drawable.car))
+        list.add(OfferData("Mob Sets,Cleaning gloves ", "Extra 10% Off",R.drawable.mob))
+        list.add(OfferData("Containers ,Bottles & more", "Upto 50% Off",R.drawable.bottle))
+        list.add(OfferData("Home Decoratives", "Extra 20% Off",R.drawable.decors))
+        list.add(OfferData("Premium Electronics", "Extra 15% Off",R.drawable.speaker))
+        list.add(OfferData("Computers and Laptops", "Extra 5% Off",R.drawable.computer))
+        list.add(OfferData("Latest Mobiles", "Upto 45% Off",R.drawable.mobile))
+
         setAdapter()
     }
 
     private fun setAdapter() {
-        binding.offerRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.offerRecycler.layoutManager = GridLayoutManager(context, 2)
 
-        //GridLayoutManager(context, 2)
+        //  LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         mAdapter = context?.let { OfferAdapter(list, it, onItemClicked) }
 
         binding.offerRecycler.adapter = mAdapter
