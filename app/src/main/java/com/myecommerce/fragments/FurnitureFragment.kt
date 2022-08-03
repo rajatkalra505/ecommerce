@@ -76,26 +76,26 @@ class FurnitureFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    hitApi()
+        hitApi()
         initViews()
         setAdapter()
         setListners()
         val face: Typeface = Typeface.createFromAsset(context?.assets, "fonts/titania_regular.ttf")
-        val searchText = binding.searchAction.findViewById<View>(androidx.appcompat.R.id.search_src_text) as TextView
+        val searchText =
+            binding.searchAction.findViewById<View>(androidx.appcompat.R.id.search_src_text) as TextView
         searchText.typeface = face
     }
 
     private fun hitApi() {
         val internet = context?.let { checkForInternet(it) }
 
-        if (internet == true){
+        if (internet == true) {
             mViewModel?.getMydata()
-            binding.retry.visibility=View.GONE
+            binding.retry.visibility = View.GONE
             binding.shimmerViewContainer.startShimmer()
-            binding.shimmerViewContainer.visibility = View.VISIBLE}
-        else
-        {
-            binding.retry.visibility=View.VISIBLE
+            binding.shimmerViewContainer.visibility = View.VISIBLE
+        } else {
+            binding.retry.visibility = View.VISIBLE
             binding.shimmerViewContainer.stopShimmer()
             binding.shimmerViewContainer.visibility = View.GONE
 
@@ -108,7 +108,7 @@ class FurnitureFragment : Fragment() {
     private fun setListners() {
 
         binding.retry.setOnClickListener {
-        hitApi()
+            hitApi()
         }
 
         binding.filterData.setOnClickListener {
@@ -246,9 +246,10 @@ class FurnitureFragment : Fragment() {
 
     fun setCount(i: Int) {
         frag_count = i
-      //  Log.e("121212", "setCount: $frag_count")
+        //  Log.e("121212", "setCount: $frag_count")
         // Toast.makeText(context, "$frag_count", Toast.LENGTH_SHORT).show()
     }
+
     private fun checkForInternet(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
